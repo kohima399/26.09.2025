@@ -77,7 +77,28 @@ namespace ConsoleApp3
             }
             Show(teams, "Вставлена команда Звезда перед Кометой");
 
+            if (teams.Count > 2)
+            {
+                FootballTeam teamToRemove = teams[2];
+                teams.Remove(teamToRemove);
+                Show(teams, "Удален объект с индексом 2");
+            }
+
+            List<FootballTeam> winners = teams.FindAll(x => x.Points >= 18);
+            Show(winners, "Команды с очками >= 18 (Winners)");
+
+            teams.Sort(CompareName);
+            Show(teams, "Сортировка по названию");
+
+            teams.Sort(ComparePlace);
+            Show(teams, "Сортировка по месту");
+
+            var sortedTeams = teams.OrderBy(t => t.Name).ThenBy(t => t.Place).ToList();
+            Show(sortedTeams, "Сортировка по Названию и Месту (LINQ)");
+
+            Console.ReadKey();
         }
+
         static void Show(List<FootballTeam> col, string comment)
         {
             Console.Write("//////////////");
