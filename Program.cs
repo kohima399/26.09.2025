@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace ConsoleApp3
 {
@@ -18,7 +21,45 @@ namespace ConsoleApp3
     {
         static void Main(string[] args)
         {
-            List<FootballTeam> FootballTeams = new List<FootballTeam>();
+            // создаем коллекцию объектов FootballTeam
+            List<FootballTeam> teams = new List<FootballTeam>();
+
+            // заносим объекты в коллекцию
+            teams.Add(new FootballTeam()
+            {
+                Name = "Метеор",
+                Coach = "Иванов",
+                Points = 12,
+                Place = 10
+            });
+            teams.Add(new FootballTeam()
+            {
+                Name = "Вымпел",
+                Coach = "Петров",
+                Points = 16,
+                Place = 7
+            });
+            teams.Add(new FootballTeam()
+            {
+                Name = "Комета",
+                Coach = "Сидоров",
+                Points = 25,
+                Place = 1
+            });
+            teams.Add(new FootballTeam()
+            {
+                Name = "Арсенал",
+                Coach = "Григорьев",
+                Points = 22,
+                Place = 4
+            });
+            teams.Add(new FootballTeam()
+            {
+                Name = "Буровик",
+                Coach = "Дорогин",
+                Points = 18,
+                Place = 6
+            });
         }
     }
 }
