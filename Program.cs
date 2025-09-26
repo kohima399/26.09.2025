@@ -18,6 +18,7 @@ namespace ConsoleApp3
     {
         static void Main(string[] args)
         {
+            List<FootballTeam> FootballTeams = new List<FootballTeam>();
         }
     }
 }
