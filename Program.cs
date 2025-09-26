@@ -90,6 +90,19 @@ namespace ConsoleApp3
                 Console.WriteLine($"Команда: {team.Name}, Тренер: {team.Coach}, Очки: {team.Points}, Место: {team.Place}");
             }
             Console.WriteLine();
+            Console.WriteLine("Работу выполнил студент группы 23ИС Худяков Илья");
+        }
+        static int ComparePlace(FootballTeam t1, FootballTeam t2)
+        {
+            if (t1.Place < t2.Place) return -1;
+            if (t1.Place == t2.Place) return 0;
+            else return 1;
+        }
+
+        static int CompareName(FootballTeam t1, FootballTeam t2)
+        {
+            int n = t1.Name.CompareTo(t2.Name);
+            return n;
         }
 
     }
